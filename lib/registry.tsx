@@ -46,7 +46,7 @@ const colorClasses: Record<string, { bg: string; text: string }> = {
   green: { bg: "bg-green-500", text: "text-green-500" },
   red: { bg: "bg-red-500", text: "text-red-500" },
   orange: { bg: "bg-orange-500", text: "text-orange-500" },
-  purple: { bg: "bg-purple-500", text: "text-purple-500" },
+  purple: { bg: "bg-zinc-500", text: "text-zinc-500" },
   gray: { bg: "bg-gray-500", text: "text-gray-500" },
 };
 
@@ -68,9 +68,9 @@ const iosComponents: Components<typeof catalog> = {
     </div>
   ),
   Screen: ({ props, children }) => (
-      <div className="mx-auto flex w-full flex-col overflow-hidden rounded-[2.5rem] border border-zinc-200 bg-[#f2f2f7] shadow-2xl dark:border-zinc-700 dark:bg-[#000]">
+      <div className="mx-auto flex w-[390px] max-w-full max-h-[min(80vh,700px)] flex-col overflow-hidden rounded-[2.5rem] border border-zinc-200 bg-[#f2f2f7] shadow-2xl dark:border-zinc-700 dark:bg-[#000]">
         {/* Status bar */}
-        <div className="flex items-center justify-between px-8 pb-1 pt-3">
+        <div className="shrink-0 flex items-center justify-between px-8 pb-1 pt-3">
           <span className="text-[15px] font-semibold text-zinc-900 dark:text-white">
             9:41
           </span>
@@ -80,11 +80,11 @@ const iosComponents: Components<typeof catalog> = {
             <span className="text-xs">🔋</span>
           </div>
         </div>
-        <div className="flex flex-1 flex-col gap-0 px-0 pb-2">
+        <div className="min-h-0 flex-1 overflow-y-auto overflow-x-hidden px-0 pb-2">
           {children}
         </div>
         {/* Home indicator */}
-        <div className="flex justify-center pb-2 pt-1">
+        <div className="shrink-0 flex justify-center pb-2 pt-1">
           <div className="h-[5px] w-[134px] rounded-full bg-zinc-900 dark:bg-white" />
         </div>
       </div>
@@ -510,7 +510,7 @@ const airbnbColorClasses: Record<string, { bg: string; text: string }> = {
   green: { bg: "bg-[#008A05]", text: "text-[#008A05]" },
   red: { bg: "bg-[#FF385C]", text: "text-[#FF385C]" },
   orange: { bg: "bg-[#E07912]", text: "text-[#E07912]" },
-  purple: { bg: "bg-[#7B2CBF]", text: "text-[#7B2CBF]" },
+  purple: { bg: "bg-[#717171]", text: "text-[#717171]" },
   gray: { bg: "bg-[#717171]", text: "text-[#717171]" },
 };
 

@@ -6,15 +6,16 @@ import { z } from "zod";
 export const IOS_DIMENSIONS_RULE = `
 
 Design constraints (always follow):
-- Target iOS iPhone viewport only: logical width 390pt, single-column layout.
-- Always use Screen as the root component (it provides the phone frame, status bar, and home indicator).
-- Keep layouts vertical and touch-friendly; avoid multi-column or desktop-style layouts.`;
+- Target iOS iPhone only: fixed width 390pt, single-column layout. The screen is a vertical canvas (like Figma): content can be as tall as needed; the UI scrolls inside the device frame. Do not try to fit everything above the fold.
+- Always use Screen as the root component (phone frame, status bar, home indicator).
+- Layout: use Stack with direction "column", gap "md" or "lg" between major sections, and padding "md" on the main content Stack for consistent insets. Use Spacer (size sm/md/lg) between sections for vertical rhythm—e.g. Spacer size md between Section groups.
+- Keep layouts vertical and touch-friendly; no multi-column or desktop-style layouts.`;
 
 /** Appended to generator prompts for web viewport (no phone frame). */
 export const WEB_DIMENSIONS_RULE = `
 
 Design constraints (always follow):
-- Target web viewport: max width 800px, centered. Use Page as the root component (simple container, no phone frame).
+- Target web viewport: max width 800px, centered. Use PageRoot as the root component (simple container, no phone frame).
 - Multi-column and desktop-style layouts are allowed. Prefer Stack with direction row for side-by-side content where appropriate.
 - Keep touch targets and spacing readable on both desktop and mobile web.`;
 

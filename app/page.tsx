@@ -660,15 +660,7 @@ export default function Home() {
     <StateProvider initialState={{}}>
       <VisibilityProvider>
         <ActionProvider handlers={{}}>
-          <main className="flex h-screen flex-col">
-            <div className="shrink-0 border-b border-zinc-200 bg-white px-4 py-3 dark:border-zinc-800 dark:bg-zinc-900/50">
-              <h1 className="text-lg font-semibold tracking-tight text-zinc-900 dark:text-zinc-50">
-                json-render · Generative UI
-              </h1>
-              <p className="text-sm text-zinc-500 dark:text-zinc-400">
-                Chat on the left; the UI on the right updates as you describe or modify it.
-              </p>
-            </div>
+          <main className="flex h-[calc(100vh-49px)] flex-col">
             <div className="flex min-h-0 flex-1 flex-col">
               <GenerativeUI />
             </div>
